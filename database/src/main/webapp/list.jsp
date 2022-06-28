@@ -2,6 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+	int level =(Integer)session.getAttribute("level");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +61,12 @@
 		%>
 	</table>
 	
-	<a href = "write.jsp">게시글 쓰기</a>
+	<%if(level>=3) {%>
+		<a href = "write.jsp">게시글 쓰기</a>
+		<%}else {%>
+		<h3>글쓰기 권한은 레벨3 부터 가능</h3>
+		<%} %>
+	
 	<%
 		if(stmt != null)
 			stmt.close();
