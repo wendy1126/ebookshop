@@ -77,11 +77,10 @@ int level =(Integer)session.getAttribute("level");
 	<a href = "list.jsp">게시글 리스트 보기</a>
 	
 	<%if(level>=3) {%>
-		<a href =delete.jsp?id=<%=id %>>삭제하기</a>
+		<a href =delete.jsp?id=<%=id %> onclick="return confirm('삭제하시겠습니까?');">삭제하기</a>
 		<%}else {%>
 		<h3>글 삭제는 레벨3 부터 가능</h3>
-		<%} %>
-	
+		<%} %>	
 	
 </body>
 </html>
