@@ -44,6 +44,11 @@
 			</tr>
 			
 			<tr>
+				<td><label for = "email">이메일 : </label></td>
+				<td><input type = "text" name = "email" id = "email" /></td>
+			</tr>
+			
+			<tr>
 				<td colspan = "2">
 					<a href = "javascript:join.submit()">회원가입</a>&nbsp;&nbsp;
 					<a href = "javascript:join.reset()">다시작성</a>

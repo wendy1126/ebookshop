@@ -18,14 +18,16 @@
 		String id = request.getParameter("id"); //id로 id값 받아오기(joinForm.jsp에서)
 		String pass = request.getParameter("pass"); //pass로 pass값 받아오기(joinForm.jsp에서)
 		String name = request.getParameter("name"); //name로 name값 받아오기(joinForm.jsp에서)
+		String email = request.getParameter("email");
 		
 		
-		String sql = "INSERT INTO user VALUES(?,?,?,?)"; //데이터 입력 sql 구문 
+		String sql = "INSERT INTO user VALUES(?,?,?,?,?)"; //데이터 입력 sql 구문 
 		pstmt = conn.prepareStatement(sql); //Statement stmt = conn.createStatement(); + 실행문, 위의 sql구문을 pstmt로 받음
 		pstmt.setString(1,id); //위의 sql구문에 들어갈 내용들
 		pstmt.setString(2,pass); //위의 sql구문에 들어갈 내용들
 		pstmt.setString(3,name); //위의 sql구문에 들어갈 내용들
-		pstmt.setInt(4,1); //위의 sql구문에 들어갈 내용들
+		pstmt.setString(4,email);
+		pstmt.setInt(5,1); //위의 sql구문에 들어갈 내용들
 		pstmt.executeUpdate(); //데이터 다 받아서 업데이트(실행)함
 		
 		

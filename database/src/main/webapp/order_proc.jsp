@@ -55,6 +55,7 @@
 	%>			
 	</table>
 	<a href = "order.jsp"><h3>주문화면으로 돌아가기</h3></a>
+	<a href="list.jsp"><h3>게시판 리스트 보기</h3></a>
 
 </body>
 </html>

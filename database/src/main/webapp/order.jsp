@@ -17,6 +17,8 @@
 				<input type = "submit" value = "검색">
 	</form>
 	
+	<a href="list.jsp">게시판 리스트 보기</a>
+	
 	<%
 		String title = request.getParameter("title");
 	
@@ -57,6 +59,7 @@
 		<td><%= rset.getInt("qty") %>권</td>
 	</tr>
 	
+	
 	<%		
 		}
 	%>				
@@ -66,7 +69,7 @@
 			<input type = "reset" value = "초기화">
 	</form>
 	<a href = "<%= request.getRequestURI() %>">
-	<h3>다시 주문하기</h3>
+	<h3>다시 주문하기</h3>	
 	</a>
 	<%
 		rset.close();

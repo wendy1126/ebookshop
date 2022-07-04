@@ -25,11 +25,13 @@
 		String id1= rs.getString(1); //mem테이블에 있는 id를 id1값에 넣음
 		String password = rs.getString(2); //mem테이블에 있는 pass를 password값에 넣음
 		String name = rs.getString(3); //mem테이블에 있는 name을 name에 넣음
-		int level = rs.getInt(4);
+		String email = rs.getString(4);
+		int level = rs.getInt(5);
 		
 		if(id.equals(id1)&&pass.equals(password)){ //입력한 id,pass가 테이블에 있는 id1과 password가 동일하다면
 			session.setAttribute("id",name); //id라는 이름으로 세션에 name값을 setting 해줌(id를 받아서 name을 가져옴)
 			session.setAttribute("level",level); //id라는 이름으로 세션에 name값을 setting 해줌(id를 받아서 name을 가져옴)
+			session.setAttribute("email", email);
 			response.sendRedirect("index.jsp"); //위 조건이 맞으면 list.jsp로 화면이 넘어감
 		}
 	}
@@ -42,6 +44,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script>
+alert("비밀번호를 확인하세요.");
+history.back();
+</script>
 
 </body>
 </html>

@@ -58,6 +58,11 @@
 		<%
 				}
 			}
+			if(!rs.next()) {
+				sql="ALTER TABLE message AUTO_INCREMENT=1";
+				rs=stmt.executeQuery(sql);
+			}
+		
 		%>
 	</table>
 	
@@ -66,7 +71,8 @@
 		<%}else {%>
 		<h3>글쓰기 권한은 레벨3 부터 가능</h3>
 		<%} %>
-	
+		<a href="order.jsp">책 주문하러 가기</a>
+		
 	<%
 		if(stmt != null)
 			stmt.close();

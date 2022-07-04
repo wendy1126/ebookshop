@@ -2,7 +2,12 @@
 <%@ page import = "java.text.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("utf-8"); %>
+<% request.setCharacterEncoding("utf-8");
+	java.util.Date thisDate = new java.util.Date();
+	
+	SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+	String now = date.format(thisDate); //현재날짜
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +16,9 @@
 </head>
 <body>
 	<%
-		String name, email, subject, memo, time;
-		name = request.getParameter("name");
-		email = request.getParameter("email");
-		time = request.getParameter("time");
+		String subject, memo;
+		String name = (String)session.getAttribute("id");
+		String email = (String)session.getAttribute("email");
 		subject = request.getParameter("subject");
 		memo = request.getParameter("memo");
 		
@@ -36,7 +40,7 @@
 		
 		sql = "insert into message " +
 				"(subject, name, time, memo, email)" +
-				"values("+"'"+subject+"','"+name+"','"+ time + "','"+memo+"','"+email+"');";
+				"values("+"'"+subject+"','"+name+"','"+ now + "','"+memo+"','"+email+"');";
 		try {
 			stmt.executeUpdate(sql);
 		}

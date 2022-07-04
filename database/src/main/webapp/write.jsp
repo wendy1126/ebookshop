@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
+<%
+	String email = (String)session.getAttribute("email");
+	String name = (String)session.getAttribute("id");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +22,7 @@
 			
 			<tr>
 				<td>작성자</td>
-				<td><input type ="text" name ="name" size = "60"></td>
+				<td><input type ="text" name ="name" value = "<%=name %>" size = "60" disabled></td>
 			</tr>
 			
 			<tr>
@@ -28,10 +32,11 @@
 			
 			<tr>
 			</tr>
+		
 			
 			<tr>
-				<td>작성날짜</td>
-				<td><input type ="text" name ="time" size = "60"></td>
+				<td>이메일</td>
+				<td><input type ="text" name ="email" value = "<%=email %>" size = "60" disabled></td>
 			</tr>
 		</table>
 		
@@ -43,6 +48,10 @@
 	
 	<a href = "list.jsp">게시글 리스트 보기</a>
 	<br>
+
+
+
+
 
 </body>
 </html>
