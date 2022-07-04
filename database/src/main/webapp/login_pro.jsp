@@ -30,6 +30,7 @@
 		
 		if(id.equals(id1)&&pass.equals(password)){ //입력한 id,pass가 테이블에 있는 id1과 password가 동일하다면
 			session.setAttribute("id",name); //id라는 이름으로 세션에 name값을 setting 해줌(id를 받아서 name을 가져옴)
+			session.setAttribute("id1", id1);
 			session.setAttribute("level",level); //id라는 이름으로 세션에 name값을 setting 해줌(id를 받아서 name을 가져옴)
 			session.setAttribute("email", email);
 			response.sendRedirect("index.jsp"); //위 조건이 맞으면 list.jsp로 화면이 넘어감

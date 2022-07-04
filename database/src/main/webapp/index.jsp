@@ -19,6 +19,9 @@
 		<%}else { %>
 		<a href="list.jsp">게시판 리스트 보기</a>
 		<a href="order.jsp">책 주문하러 가기</a>
+		<form action = "logout.jsp" method="post">
+		<input type = "submit" value = "로그아웃">
+		</form>
 		<%} %>
 		
 	
